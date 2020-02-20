@@ -11,7 +11,7 @@ import java.io.FileWriter;
  * must be tested in the code.
  * 
  * @result a file contains each symptom and the associated count
- *
+ * @throws io exception 
  */
 
 public class AnalyticsCounter {
