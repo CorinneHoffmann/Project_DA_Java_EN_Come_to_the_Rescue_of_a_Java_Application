@@ -15,7 +15,7 @@ import java.util.TreeMap;
  *                 presented this symptom. Map is not ordered.
  *
  */
-public class WriteSymptomsDataInFile implements ISymptomWriter {
+public class WriteSymptomsDataInFile implements OSymptomWriter {
 
 	private String filepath;
 	private Map<String, Integer> map;

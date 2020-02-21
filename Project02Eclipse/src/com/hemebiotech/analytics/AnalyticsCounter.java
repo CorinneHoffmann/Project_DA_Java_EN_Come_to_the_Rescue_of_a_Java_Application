@@ -27,7 +27,7 @@ public class AnalyticsCounter {
 		symptomsDictionnary = transformListMap.TransformListInDictionnary();
 
 		// The constructor need two parameters filepath and map. The method WriteSymptomsInFile is void
-		ISymptomWriter writer = new WriteSymptomsDataInFile("Fichiers/result.txt", symptomsDictionnary);
+		OSymptomWriter writer = new WriteSymptomsDataInFile("Fichiers/result.txt", symptomsDictionnary);
 		writer.WriteSymptomsInFile();
 	}
 }

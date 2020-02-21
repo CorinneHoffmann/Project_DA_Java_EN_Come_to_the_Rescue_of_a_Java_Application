@@ -5,7 +5,7 @@ package com.hemebiotech.analytics;
  * and write results in a file (for example)
  * 
  */
-public interface ISymptomWriter {
+public interface OSymptomWriter {
 
 	/**
 	 * If no data in input, the file results is empty.
