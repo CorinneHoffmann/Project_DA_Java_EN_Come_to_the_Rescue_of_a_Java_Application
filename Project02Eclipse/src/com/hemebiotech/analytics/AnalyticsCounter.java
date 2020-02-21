@@ -5,72 +5,29 @@ import java.util.Map;
 
 /**
  * The class read symptom data from a source (a file non ordered) and count for
- * every symptoms the number of patients who declare the symptom 
- * 
- * @result a map contains each symptom and the associated count
+ * every symptoms the number of patients who declare the symptom The results are
+ * written in a file
  *
  */
 
 public class AnalyticsCounter {
-	/*private static int headCount = 0;
-	private static int rashCount = 0;
-	private static int pupilCount = 0;*/
 
 	public static void main(String args[]) {
-			//throws Exception {
-		
-		List<String> symptomsList;	
-		Map<String,Integer> symptomsDictionnary;;	
-		
-		//try {
-			ISymptomReader reader = new ReadSymptomDataFromFile("symptoms.txt");		
-			symptomsList=reader.GetSymptoms();
-			
-			TransformListMap transformListMap = new TransformListMap(symptomsList);
-			symptomsDictionnary = transformListMap.TransformListInDictionnary();
-			
-			symptomsDictionnary.entrySet().forEach(entry->{
-			    System.out.println(entry.getKey() + " " + entry.getValue());  
-			 });
-			
-		
-			
-			/*
-			 int i = 0;
-			 
-			while (i< symptomsList.size()-1) {
-				i++;
-				System.out.println("symptom from file: " + symptomsList.get(i));
-			}
-			//BufferedReader reader = new BufferedReader(new FileReader("symptoms.txt"));
-			//String line = reader.readLine();
-			
-			int i = 0;
 
-			while (line != null) {
-				i++;
-				System.out.println("symptom from file: " + line);
-				if (line.equals("headache")) {
-					headCount++;
-				} else if (line.equals("rush")) {
-					rashCount++;
-				} else if (line.contains("pupils")) {
-					pupilCount++;
-				}
+		List<String> symptomsList;
+		Map<String, Integer> symptomsDictionnary;
+		;
 
-				line = reader.readLine();
-			} 
-			
-			reader.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			System.out.println("The file not exists or the specified path is incorrect");
-		}
+		// The constructor need a parameter filepath and the method GetSymptom return a List<String>
+		ISymptomReader reader = new ReadSymptomDataFromFile("symptoms.txt");
+		symptomsList = reader.GetSymptoms();
 
-		FileWriter writer = new FileWriter("result.out");
-		writer.write("headache: " + headCount + "\n");
-		writer.write("rash: " + rashCount + "\n");
-		writer.write("dialated pupils: " + pupilCount + "\n");
-		writer.close();*/
+		// The constructor need a parameter List<String> and the method TransformListMap return a Map
+		TransformListMap transformListMap = new TransformListMap(symptomsList);
+		symptomsDictionnary = transformListMap.TransformListInDictionnary();
+
+		// The constructor need two parameters filepath and map. The method WriteSymptomsInFile is void
+		ISymptomWriter writer = new WriteSymptomsDataInFile("Fichiers/result.txt", symptomsDictionnary);
+		writer.WriteSymptomsInFile();
 	}
 }
