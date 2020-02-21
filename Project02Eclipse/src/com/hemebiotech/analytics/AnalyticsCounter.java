@@ -1,14 +1,14 @@
 package com.hemebiotech.analytics;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * The class read symptom data from a source (a file non ordered) and count for
- * every symptoms the number of patients who declare the symptom Each symptom
- * must be tested in the code.
+ * every symptoms the number of patients who declare the symptom 
  * 
- * @result a file contains each symptom and the associated count
- * @throws io exception 
+ * @result a map contains each symptom and the associated count
+ *
  */
 
 public class AnalyticsCounter {
@@ -20,12 +20,24 @@ public class AnalyticsCounter {
 			//throws Exception {
 		
 		List<String> symptomsList;	
+		Map<String,Integer> symptomsDictionnary;;	
 		
 		//try {
 			ISymptomReader reader = new ReadSymptomDataFromFile("symptoms.txt");		
 			symptomsList=reader.GetSymptoms();
 			
-			int i = 0;
+			TransformListMap transformListMap = new TransformListMap(symptomsList);
+			symptomsDictionnary = transformListMap.TransformListInDictionnary();
+			
+			symptomsDictionnary.entrySet().forEach(entry->{
+			    System.out.println(entry.getKey() + " " + entry.getValue());  
+			 });
+			
+		
+			
+			/*
+			 int i = 0;
+			 
 			while (i< symptomsList.size()-1) {
 				i++;
 				System.out.println("symptom from file: " + symptomsList.get(i));
@@ -33,7 +45,7 @@ public class AnalyticsCounter {
 			//BufferedReader reader = new BufferedReader(new FileReader("symptoms.txt"));
 			//String line = reader.readLine();
 			
-			/*int i = 0;
+			int i = 0;
 
 			while (line != null) {
 				i++;
