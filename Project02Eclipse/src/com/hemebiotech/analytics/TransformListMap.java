@@ -7,11 +7,11 @@ import java.util.Map;
 
 /**
  * this class transform a list in map. the entry parameter list is no necessary
- * ordered. Accept a String List return a Map <String,Integer> with the type of
+ * ordered. Accept a String List return a Map with the type of
  * symptom and the number of patients associated if Lit is empty, Map is empty
  * 
- * @param List<String>
- * @return Map<String,Integer>
+ * @param List
+ * @return Map
  */
 
 public class TransformListMap {
