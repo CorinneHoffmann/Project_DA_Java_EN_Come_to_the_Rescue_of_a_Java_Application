@@ -1,9 +1,6 @@
 package com.hemebiotech.analytics;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.util.List;
 
 /**
  * The class read symptom data from a source (a file non ordered) and count for
@@ -15,16 +12,28 @@ import java.io.FileWriter;
  */
 
 public class AnalyticsCounter {
-	private static int headCount = 0;
+	/*private static int headCount = 0;
 	private static int rashCount = 0;
-	private static int pupilCount = 0;
+	private static int pupilCount = 0;*/
 
-	public static void main(String args[]) throws Exception {
-
-		try {
-			BufferedReader reader = new BufferedReader(new FileReader("symptoms.txt"));
-			String line = reader.readLine();
+	public static void main(String args[]) {
+			//throws Exception {
+		
+		List<String> symptomsList;	
+		
+		//try {
+			ISymptomReader reader = new ReadSymptomDataFromFile("symptoms.txt");		
+			symptomsList=reader.GetSymptoms();
+			
 			int i = 0;
+			while (i< symptomsList.size()-1) {
+				i++;
+				System.out.println("symptom from file: " + symptomsList.get(i));
+			}
+			//BufferedReader reader = new BufferedReader(new FileReader("symptoms.txt"));
+			//String line = reader.readLine();
+			
+			/*int i = 0;
 
 			while (line != null) {
 				i++;
@@ -38,7 +47,8 @@ public class AnalyticsCounter {
 				}
 
 				line = reader.readLine();
-			}
+			} 
+			
 			reader.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -49,6 +59,6 @@ public class AnalyticsCounter {
 		writer.write("headache: " + headCount + "\n");
 		writer.write("rash: " + rashCount + "\n");
 		writer.write("dialated pupils: " + pupilCount + "\n");
-		writer.close();
+		writer.close();*/
 	}
 }

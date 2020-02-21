@@ -38,6 +38,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 				reader.close();
 			} catch (IOException e) {
 				e.printStackTrace();
+				System.out.println("The file not exists or the specified path is incorrect");
 			}
 		}
 		
