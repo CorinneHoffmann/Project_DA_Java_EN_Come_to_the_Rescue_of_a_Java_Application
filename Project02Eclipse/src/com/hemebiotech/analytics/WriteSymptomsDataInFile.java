@@ -7,12 +7,13 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * This class inherited from IsSymptomeWriter.
- * @param Two parameters must be passed. A full or partial path of file and a map
- * 
+ * This class inherited from OSymptomWriter.
+ 
  * The output file is ordered by ascending symptoms.
  * It contains different symptoms and the number of persons who are
  * presented this symptom. Map is not ordered.
+ * @author CorinneHoffmann
+ * @version V01.00
  *
  */	
  
@@ -20,6 +21,12 @@ public class WriteSymptomsDataInFile implements OSymptomWriter {
 
 	private String filepath;
 	private Map<String, Integer> map;
+	
+	/**
+	* @param filepath (full or partial path of file)
+	* @param map (key=symptom) (value=numbers of patients) 
+	*
+	*/
 	
 	public WriteSymptomsDataInFile(String filepath, Map<String, Integer> map) {
 		this.filepath = filepath;

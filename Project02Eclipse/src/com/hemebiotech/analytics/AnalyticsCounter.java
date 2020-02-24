@@ -3,7 +3,10 @@ package com.hemebiotech.analytics;
 /**
  * The class read symptom data from a source (a file non ordered) and write results
  * in  a file ordered.
- * 
+ * @see DataAnalyse
+ *
+ * @author CorinneHoffmann
+ * @version V01.00
  */
 
 public class AnalyticsCounter {

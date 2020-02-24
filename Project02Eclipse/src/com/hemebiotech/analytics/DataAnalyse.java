@@ -5,18 +5,26 @@ import java.util.Map;
 
 /**
  * The class read symptom data from a source, (a file non ordered) and write a file ordered.
- * @param two parameters inputfilepath (input Data) and outputfilepath (Output Data)
+ * 
+ * @author CorinneHoffmann
+ * @version V01.00
  */
 
 public class DataAnalyse {
 
-	private String inputfilepath;
-	private String outputfilepath;
+	private String inputFilePath;
+	private String outputFilePath;
 	
-
-	public DataAnalyse(String inputfilepath,String outputfilepath) {
-		this.inputfilepath = inputfilepath;
-		this.outputfilepath = outputfilepath;
+	/**
+	 * The class read symptom data from a source, (a file non ordered) and write a file ordered.
+	 * @param inputFilePath is the name of input file partial or complete path
+	 * @param outputFilePath (Output Data) partial or complete path
+	 *
+	 */
+	
+	public DataAnalyse(String inputFilePath,String outputFilePath) {
+		this.inputFilePath = inputFilePath;
+		this.outputFilePath = outputFilePath;
 	}
 	
 	/**
@@ -30,13 +38,13 @@ public class DataAnalyse {
 		List<String> symptomsList;
 		Map<String, Integer> symptomsDictionnary;
 		
-		ISymptomReader reader = new ReadSymptomDataFromFile(inputfilepath);
+		ISymptomReader reader = new ReadSymptomDataFromFile(inputFilePath);
 		symptomsList = reader.GetSymptoms();
 		
 		TransformListMap transformListMap = new TransformListMap(symptomsList);
 		symptomsDictionnary = transformListMap.TransformListInDictionnary();
 		
-		OSymptomWriter writer = new WriteSymptomsDataInFile(outputfilepath, symptomsDictionnary);
+		OSymptomWriter writer = new WriteSymptomsDataInFile(outputFilePath, symptomsDictionnary);
 		writer.WriteSymptomsInFile();
 	}
 }

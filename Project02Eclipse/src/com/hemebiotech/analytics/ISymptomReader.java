@@ -8,6 +8,9 @@ import java.util.List;
  * many duplications
  * 
  * The implementation does not need to order the list
+ * @author CorinneHoffmann
+ * @version V01.00
+ *
  * 
  */
 public interface ISymptomReader {

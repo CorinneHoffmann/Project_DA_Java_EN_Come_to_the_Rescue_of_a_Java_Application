@@ -10,18 +10,28 @@ import java.util.Map;
  * ordered. Accept a String List return a Map with the type of
  * symptom and the number of patients associated if Lit is empty, Map is empty
  * 
- * @param List
- * @return Map
+ * @author CorinneHoffmann
+ * @version V01.00
  */
 
 public class TransformListMap {
 
 	private List<String> symptomsList;
 
+	/**
+	* @param symptomsList is a List of String (contains symptoms and numbers of patients 
+	* 
+	*/
+			 
 	public TransformListMap(List<String> symptomsList) {
 		this.symptomsList = symptomsList;
 	}
 
+	/**
+	* @return Map (String, Integer)
+	* 	 
+	*/
+						
 	public Map<String, Integer> TransformListInDictionnary() {
 		Map<String, Integer> result = new HashMap<String, Integer>();
 
