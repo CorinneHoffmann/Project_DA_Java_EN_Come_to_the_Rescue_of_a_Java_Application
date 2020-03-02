@@ -32,7 +32,7 @@ public class TransformListMap {
 	* 	 
 	*/
 						
-	public Map<String, Integer> TransformListInDictionnary() {
+	public Map<String, Integer> transformListInDictionnary() {
 		Map<String, Integer> result = new HashMap<String, Integer>();
 
 		// we sort the List because we must manage a read break

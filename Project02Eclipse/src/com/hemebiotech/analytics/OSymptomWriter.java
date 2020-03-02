@@ -12,5 +12,5 @@ public interface OSymptomWriter {
 	/**
 	 * If no data in input, the file results is empty.
 	 */
-	void WriteSymptomsInFile();
+	void writeSymptomsInFile();
 }

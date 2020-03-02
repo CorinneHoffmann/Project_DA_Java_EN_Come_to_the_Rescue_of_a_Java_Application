@@ -34,7 +34,7 @@ public class WriteSymptomsDataInFile implements OSymptomWriter {
 	}
 
 	@Override
-	public void WriteSymptomsInFile() {
+	public void writeSymptomsInFile() {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(filepath));
 

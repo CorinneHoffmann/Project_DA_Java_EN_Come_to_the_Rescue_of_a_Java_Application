@@ -14,7 +14,7 @@ public class AnalyticsCounter {
 	public static void main(String args[]) {
 		
 		DataAnalyse analyse = new DataAnalyse ("symptoms.txt","result.txt");
-		analyse.TreatData();
+		analyse.treatData();
 		
 	}
 }

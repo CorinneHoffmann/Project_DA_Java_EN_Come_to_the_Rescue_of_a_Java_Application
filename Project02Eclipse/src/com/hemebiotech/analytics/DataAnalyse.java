@@ -28,23 +28,23 @@ public class DataAnalyse {
 	}
 	
 	/**
-	 * The method TreatData, transformed a input file in List
+	 * The method treatData, transformed a input file in List
 	 * then transformed a List to Map  
 	 * and write the map in a file
 	 *
 	 */	
 	
-	public void TreatData() {
+	public void treatData() {
 		List<String> symptomsList;
 		Map<String, Integer> symptomsDictionnary;
 		
 		ISymptomReader reader = new ReadSymptomDataFromFile(inputFilePath);
-		symptomsList = reader.GetSymptoms();
+		symptomsList = reader.getSymptoms();
 		
 		TransformListMap transformListMap = new TransformListMap(symptomsList);
-		symptomsDictionnary = transformListMap.TransformListInDictionnary();
+		symptomsDictionnary = transformListMap.transformListInDictionnary();
 		
 		OSymptomWriter writer = new WriteSymptomsDataInFile(outputFilePath, symptomsDictionnary);
-		writer.WriteSymptomsInFile();
+		writer.writeSymptomsInFile();
 	}
 }
